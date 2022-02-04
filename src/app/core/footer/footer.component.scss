@@ -1,0 +1,70 @@
+.footer {
+  background-color: var(--primary-transparent-color);
+  padding: 20px;
+
+  .wrapper {
+    margin-top: 100px;
+    width: 100%;
+    height: 100%;
+
+    .copyright {
+      margin-top: 100px;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+
+  }
+
+  .logo {
+    perspective: 200px;
+    position: relative;
+
+    img {
+      transition: transform linear 250ms;
+      transform-style: preserve-3d;
+      height: 100px;
+      width: 100px;
+      padding: 20px;
+      filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.2));
+    }
+  }
+
+  .links {
+    column-gap: 40px;
+  }
+
+  .link {
+    transition: transform linear 250ms;
+
+    &:hover {
+      transition: transform linear 250ms;
+      transform: scale(1.5);
+    }
+
+  }
+
+  .opensea {
+    margin-top: 40px;
+  }
+}
+
+.ig, .os, .ds, .ne {
+  transition: transform linear 250ms;
+}
+
+.ig {
+  transform: scale(1.3) rotateY(-45deg) !important;
+}
+
+.os {
+  transform: scale(1.3) rotateX(-45deg) !important;
+}
+
+.ds {
+  transform: scale(1.3) rotateY(45deg) !important;
+}
+
+.ne {
+  transform: scale(1.3) rotate(0) !important;
+}

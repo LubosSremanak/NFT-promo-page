@@ -1,0 +1,33 @@
+<div class="wrapper flex-row flex-jc-center">
+  <div class="scene">
+    <button (click)="next()" class="next">
+      <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
+    <button (click)="previous()" class="previous">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+    <div
+      #carousel
+      [class.rotate]="isRotate"
+      [class.rotate-off]="!isRotate"
+      class="carousel"
+    >
+      <div
+        *ngFor="let slide of slides; let index = index"
+        [ngStyle]="{
+          transform:
+            'rotateY(' +
+            (360 / slides.length) * index +
+            'deg) translateZ(288px)'
+        }"
+        class="cell"
+      >
+        <img
+          class="image"
+          src="assets/images/story/cards/{{ slide + 1 }}.png"
+          alt="Divocakos story"
+        />
+      </div>
+    </div>
+  </div>
+</div>

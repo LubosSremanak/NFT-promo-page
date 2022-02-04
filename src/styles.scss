@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap");
+
+html,
+body {
+  height: auto;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-family: "Oswald", sans-serif;
+}
+
+h1 {
+  font-family: "Russo One", sans-serif;
+  letter-spacing: 0.05em;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 24px;
+  letter-spacing: 0.025em;
+  font-weight: 600;
+}
+
+p {
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  font-size: 20px;
+}
+
+img {
+  //user-select: none;
+  //pointer-events: none;
+}
+
+:root {
+  --primary-color: #000000;
+  --secondary-color:#9c6644;
+  --secondary--transparent-color: rgba(89, 19, 124, 0.26);
+  --primary-transparent-color: rgba(0, 0, 0, 0.5);
+  --text-color: #ffffff;
+}

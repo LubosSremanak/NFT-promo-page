@@ -1,0 +1,24 @@
+<div class="images flex-row">
+  <div
+    *ngFor="let image of images; trackBy: trackImage; let index = index"
+    class="wrapper"
+    [ngStyle]="width"
+  >
+    <img
+      #img
+      [@flip]="image.flip"
+      *ngIf="image.id<75"
+      class="image"
+      alt="image"
+      src="assets/images/divocakos/{{image.id}}.png"
+    />
+    <img
+      #img
+      [@flip]="image.flip"
+      *ngIf="image.id>=75"
+      class="image"
+      alt="image"
+      src="assets/images/divocakos/divocakos.png"
+    />
+  </div>
+</div>

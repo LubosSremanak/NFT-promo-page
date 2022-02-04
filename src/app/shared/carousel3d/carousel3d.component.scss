@@ -1,0 +1,100 @@
+.wrapper {
+  overflow: hidden;
+  width: 97vw;
+
+  .scene {
+    width: 300px;
+    height: 500px;
+    position: relative;
+    perspective: 1000px;
+
+    .carousel {
+      //pointer-events: none;
+      //user-select: none;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      transform: translateZ(-288px) translateX(-50%) translateY(0);
+      transition: transform 800ms;
+      left: 50%;
+      top: 25%;
+
+      .cell {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        left: 0;
+        top: 0;
+
+        .image {
+          object-fit: contain;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .previous,
+    .next {
+      font-weight: 900;
+      font-size: 30px;
+      position: absolute;
+      top: 50%;
+      z-index: 5;
+      border-radius: 50%;
+      padding: 4px 10px;
+      background-color: rgba(0, 0, 0, 1);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      box-sizing: border-box;
+    }
+
+    .previous {
+      left: -18%;
+      transform: translateY(-50%) translateX(50%);
+    }
+
+    .next {
+      right: -18%;
+      transform: translateY(-50%) translateX(-50%);
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .scene {
+    perspective: 500px;
+    width: 200px !important;
+    height: 400px !important;
+  }
+  .cell {
+    width: 200px !important;
+    height: 200px !important;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .scene {
+    perspective: 200px;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+}
+
+.rotate {
+  animation: slideshow1 15s linear infinite;
+}
+
+.rotate-off {
+  animation: slideshow1 1500ms linear;
+}
+
+@keyframes slideshow1 {
+  from {
+    transform: translateZ(-288px) translateY(0) translateX(-50%) rotateY(0deg);
+  }
+  to {
+    transform: translateZ(-288px) translateY(0) translateX(-50%) rotateY(360deg);
+  }
+}

@@ -1,0 +1,54 @@
+<nav class="navigation flex-row flex-jc-center flex-ai-center">
+  <div class="header flex-row flex-ai-center">
+    <a class="logo" routerLink="">
+      DivocakosNFT
+    </a>
+    <app-lottie
+      (click)="clicked()"
+      (isLoaded)="menuButtonInitialized()"
+      [autoPlay]="false"
+      [loop]="false"
+      [lottieId]="'menuButton'"
+      [path]="'assets/animations/menuButton.json'"
+      class="menu-icon"
+      height="50px"
+      width="50px"
+    ></app-lottie>
+  </div>
+  <div
+    (@collapse.done)="rollDone($event)"
+    (@collapse.start)="rollStart($event)"
+    [@collapse]="!menuClick"
+
+    class="container flex-row flex-ai-center flex-jc-center">
+    <div class="spacer1"></div>
+    <a
+      class="link"
+      aria-label="instagram"
+      target="_blank"
+      href="https://opensea.io/"
+    >
+      <span>Follow</span>
+      <img class="instagram" src="assets/icons/instagram.svg" alt="instagram"/>
+    </a>
+    <a
+      class="link"
+      aria-label="discord"
+      target="_blank"
+      href="https://opensea.io/"
+    >
+      <span>Join&nbsp;&nbsp;</span>
+      <img class="discord" src="assets/icons/discord.svg" alt="opensea"/>
+    </a>
+    <a
+      class="link"
+      aria-label="opensea"
+      target="_blank"
+      href="https://opensea.io/"
+    >
+      <span>Buy&nbsp;&nbsp;&nbsp;</span>
+      <img class="opensea" src="assets/icons/opensea.svg" alt="opensea"/>
+    </a>
+    <div class="spacer"></div>
+  </div>
+</nav>

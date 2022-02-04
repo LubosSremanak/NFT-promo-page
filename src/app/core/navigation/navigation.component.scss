@@ -1,0 +1,121 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: fit-content;
+  z-index: 999;
+  user-select: none;
+  mask-image: linear-gradient(to bottom, black 98%, rgba(0, 0, 0, 0));
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+
+  .header {
+    width: 100%;
+    padding: 20px;
+    justify-content: space-between;
+    box-sizing: border-box;
+
+    .logo {
+      font-family: "Russo One", sans-serif;
+      text-shadow: 0 0 20px rgb(0 0 0 /20%);
+      letter-spacing: 0.02rem;
+      height: 30px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      column-gap: 10px;
+      transition: transform linear 250ms, drop-shadow linear 250ms;
+
+      .divocakos {
+        height: 100%;
+        width: 30px;
+        object-fit: contain;
+        transform: scale(1.3);
+      }
+
+      &:hover {
+        transition: transform linear 250ms, drop-shadow linear 250ms;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .container {
+    width: 100%;
+    row-gap: 20px;
+    column-gap: 20px;
+
+    .link {
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 5px;
+      font-weight: 900;
+      transition: transform linear 250ms, drop-shadow linear 250ms;
+
+      &:hover {
+        transition: transform linear 250ms, drop-shadow linear 250ms;
+        transform: scale(1.2);
+      }
+
+      .instagram {
+        height: 100%;
+        width: 30px;
+        object-fit: cover;
+        transform: scale(1.3);
+      }
+
+      .discord {
+        height: 100%;
+        width: 30px;
+        object-fit: contain;
+      }
+
+      .opensea {
+        height: 100%;
+        width: 30px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .spacer {
+
+  }
+
+  .spacer1 {
+    flex: 1 0;
+  }
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  user-select: none;
+  margin-right: -15px;
+
+  ::ng-deep svg {
+    overflow: hidden;
+    transform: scale(2) !important;
+    //stroke: var(--text-color)!important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .menu-icon {
+    display: flex;
+  }
+  .navigation, .container {
+    overflow: hidden;
+    flex-direction: column;
+  }
+
+  .header {
+    padding: 5px 20px !important;
+  }
+  .spacer {
+    margin-bottom: 50px;
+  }
+}

@@ -1,0 +1,53 @@
+<section class="footer">
+  <div class="wrapper flex-column flex-jc-center flex-ai-center">
+    <div class="links flex-row flex-jc-center flex-ai-center">
+
+      <a
+        class="link"
+        aria-label="instagram"
+        target="_blank"
+        href="https://opensea.io/"
+        (mouseenter)="hoverAnimation(1)"
+        (mouseleave)="resetHover()"
+      >
+        <span>Instagram</span>
+      </a>
+      <a class="logo"
+         routerLink="">
+        <img
+          [class.ig]="link===1"
+          [class.os]="link===2"
+          [class.ds]="link===3"
+          [class.ne]="link===0"
+          class="divocakos"
+          src="assets/images/heads/1.png"
+          alt="logo divocakos"
+        />
+      </a>
+      <a
+        (mouseenter)="hoverAnimation(3)"
+        (mouseleave)="resetHover()"
+        class="link"
+        aria-label="discord"
+        target="_blank"
+        href="https://opensea.io/"
+      >
+        <span>Discord</span>
+      </a>
+
+    </div>
+    <a
+      class="link opensea"
+      aria-label="opensea"
+      target="_blank"
+      href="https://opensea.io/"
+      (mouseenter)="hoverAnimation(2)"
+      (mouseleave)="resetHover()"
+    >
+      <span>Opensea</span>
+    </a>
+    <span class="copyright"
+      >Copyright &copy; 2022 divocakos.com. All Rights Reserved</span
+    >
+  </div>
+</section>

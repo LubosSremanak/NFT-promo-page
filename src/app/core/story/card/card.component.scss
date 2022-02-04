@@ -1,0 +1,62 @@
+.card {
+  width: 100%;
+  perspective: 1000px;
+  margin-bottom: 20px;
+  .title {
+    margin-bottom: 50px;
+  }
+
+  .links {
+    margin-bottom: 50px;
+    padding: 0 10px;
+
+    .link {
+      margin: 5px;
+      cursor: pointer;
+      transition: transform linear 200ms, filter linear 200ms;
+      filter: saturate(0);
+
+      &:hover {
+        transition: transform linear 200ms, filter linear 200ms;
+        transform: scale(1.2);
+        filter: saturate(100%);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        max-width: 80px;
+        max-height: 80px;
+      }
+    }
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+    max-width: 200px;
+    max-height: 300px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    transform-style: preserve-3d;
+    animation: card infinite alternate 5s linear;
+  }
+
+  .story {
+    margin-top: 20px;
+    padding: 20px 20px 30px 20px;
+    max-width: 600px;
+    font-size: 20px !important;
+    height: 100px;
+  }
+}
+
+@keyframes card {
+  from {
+    transform: rotateY(5deg);
+    filter: saturate(100%);
+  }
+  to {
+    transform: rotateY(-45deg);
+    filter: saturate(25%);
+  }
+}

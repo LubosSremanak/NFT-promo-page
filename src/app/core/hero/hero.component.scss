@@ -1,0 +1,97 @@
+.hero {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  //pointer-events: none;
+  //user-select: none;
+  z-index: 10;
+  margin: 50px 0 20px;
+
+  .wrapper {
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(2px);
+    background-color: var(--primary-transparent-color);
+
+    .header {
+      margin-top: -100px;
+
+      .title {
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        font-size: clamp(3rem, 5vw, 5rem);
+        margin: 0 !important;
+      }
+    }
+
+    .motivation {
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+      font-size: clamp(1rem, 1.5vw, 3rem);
+      margin: 10px 0 0 0;
+      letter-spacing: 0.1rem;
+    }
+
+    .image {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: scale(0.8) translateX(-62.5%) translateY(70%);
+      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+
+      &::ng-deep {
+        #face9, #ear-color19, #ear-color29 {
+          animation: colorfull 60s infinite alternate linear;
+        }
+      }
+    }
+  }
+
+  .bg-animation {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    box-sizing: border-box;
+  }
+
+}
+
+
+@keyframes colorfull {
+  0% {
+    fill: var(--secondary-color);
+  }
+  12.5% {
+    fill: #2A9D8F;
+  }
+  25% {
+    fill: #E9C46A;
+  }
+  37.5% {
+    fill: #F4A261;
+  }
+  50% {
+    fill: #FFBE0B;
+  }
+  62.5% {
+    fill: #8f61bb;
+  }
+  75% {
+    fill: #FB5607;
+  }
+  87.5% {
+    fill: #FF006E;
+  }
+  100% {
+    fill: #8338EC;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .hero {
+    .wrapper .image {
+      transform: scale(0.5) translateX(-100%) translateY(100%) !important;
+    }
+  }
+}

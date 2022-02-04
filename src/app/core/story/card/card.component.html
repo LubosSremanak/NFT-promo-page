@@ -1,0 +1,24 @@
+<section class="card flex-column flex-ai-center">
+  <h1 class="title">Cards</h1>
+  <div class="links flex-row">
+    <button
+      *ngFor="let image of [4, 1, 2, 3, 5]"
+      class="link flex-row flex-jc-center"
+      (click)="chooseCard(image)"
+    >
+      <img
+        src="assets/images/story/cards/{{ image }}.png"
+        alt="Divocakos link"
+      />
+    </button>
+  </div>
+  <img
+    #section
+    class="image"
+    src="assets/images/story/cards/{{ id }}.png"
+    alt="Divocakos story"
+  />
+  <p class="story">
+    {{ story }}
+  </p>
+</section>
