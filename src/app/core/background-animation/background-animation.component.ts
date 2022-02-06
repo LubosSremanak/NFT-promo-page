@@ -12,14 +12,17 @@ import {flipLsAnimation} from './flip';
 export class BackgroundAnimationComponent implements OnInit {
   images: ImageAnimator[];
   private round: number;
-  width: any;
+  dimension: any;
   private allImages: number;
+  private actualWidth: number;
+
 
   constructor(
     private ngZone: NgZone,
     private changeDetector: ChangeDetectorRef
   ) {
     this.allImages = 0;
+    this.actualWidth = window.innerWidth;
     this.images = this.createImageAnimators();
     this.round = 0;
   }
@@ -28,17 +31,19 @@ export class BackgroundAnimationComponent implements OnInit {
     const columns = Math.round(window.innerWidth / 100);
     const rows = 4;
     this.allImages = Math.round(columns * rows);
-    this.width = {
+    this.dimension = {
       width: `calc(100% / ${columns})`,
       height: `calc(100% / ${rows})`,
     };
 
-    console.log(this.width)
+
   }
 
   @HostListener('window:resize')
   onResize() {
     this.ngZone.runOutsideAngular(() => {
+      if (window.innerWidth == this.actualWidth) return;
+      this.actualWidth = window.innerWidth;
       this.images = this.createImageAnimators();
     });
   }
@@ -50,7 +55,10 @@ export class BackgroundAnimationComponent implements OnInit {
   private animate(): void {
     const lastTime = this.getTime();
     const delay = 0;
-    requestAnimationFrame(() => this.render(delay, lastTime));
+    this.ngZone.runOutsideAngular(() => {
+      requestAnimationFrame(() => this.render(delay, lastTime));
+    });
+
   }
 
   private getTime = (): number => new Date().getTime();

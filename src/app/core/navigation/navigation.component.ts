@@ -1,4 +1,4 @@
-import {Component, HostListener, NgZone, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, HostListener, NgZone, OnInit} from '@angular/core';
 import {NavigationEnd, Router} from "@angular/router";
 import {LottieAnimationsService} from "../../shared/lottie-ls/service/lottie-animations.service";
 import {collapseAnimation} from "angular-animations";
@@ -8,6 +8,7 @@ import {collapseAnimation} from "angular-animations";
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss'],
   animations: [collapseAnimation({duration: 300})],
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class NavigationComponent implements OnInit {
   readonly breakpoint: number = 600;

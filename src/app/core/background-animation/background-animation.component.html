@@ -2,7 +2,7 @@
   <div
     *ngFor="let image of images; trackBy: trackImage; let index = index"
     class="wrapper"
-    [ngStyle]="width"
+    [ngStyle]="dimension"
   >
     <img
       #img
@@ -10,7 +10,7 @@
       *ngIf="image.id<75"
       class="image"
       alt="image"
-      src="assets/images/divocakos/{{image.id}}.png"
+      src="assets/images/divocakos/compressed/{{image.id}}.webp"
     />
     <img
       #img
@@ -18,7 +18,7 @@
       *ngIf="image.id>=75"
       class="image"
       alt="image"
-      src="assets/images/divocakos/divocakos.png"
+      src="assets/images/divocakos/compressed/divocakos.webp"
     />
   </div>
 </div>

@@ -1,13 +1,10 @@
-import { Component, HostListener, NgZone, OnInit } from '@angular/core';
-import {
-  fadeInOnEnterAnimation,
-  fadeOutOnLeaveAnimation,
-} from 'angular-animations';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-story',
   templateUrl: './story.component.html',
   styleUrls: ['./story.component.scss'],
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class StoryComponent implements OnInit {
 
@@ -16,7 +13,9 @@ export class StoryComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
 
 
 }
