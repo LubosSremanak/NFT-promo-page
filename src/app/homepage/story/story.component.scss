@@ -1,0 +1,18 @@
+.story {
+  background-color: var(--primary-transparent-color);
+  position: relative;
+  backdrop-filter: blur(30px);
+  width: 100%;
+  padding-bottom: 150px;
+
+  .title {
+    color: var(--text-color);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  }
+
+  .card {
+    width: 100%;
+  }
+
+
+}

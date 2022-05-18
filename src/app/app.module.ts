@@ -7,9 +7,10 @@ import {CoreModule} from './core/core.module';
 import {SharedModule} from './shared/shared.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgxScrollTopModule} from 'ngx-scrolltop';
+import { GiveawayComponent } from './giveaway/giveaway.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, GiveawayComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
